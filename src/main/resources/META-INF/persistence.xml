@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="evaluationPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        
+        <!-- Exercice 1 : Gestion de Stock -->
+        <class>ma.projet.classes.Categorie</class>
+        <class>ma.projet.classes.Produit</class>
+        <class>ma.projet.classes.Commande</class>
+        <class>ma.projet.classes.LigneCommande</class>
+
+        <!-- Exercice 2 : Gestion de Projets -->
+        <class>ma.projet.classes.Employe</class>
+        <class>ma.projet.classes.Projet</class>
+        <class>ma.projet.classes.Tache</class>
+
+        <!-- Exercice 3 : État Civil -->
+        <class>ma.projet.classes.Personne</class>
+        <class>ma.projet.classes.Homme</class>
+        <class>ma.projet.classes.Femme</class>
+        <class>ma.projet.classes.Mariage</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:evaluationdb;DB_CLOSE_DELAY=-1"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
